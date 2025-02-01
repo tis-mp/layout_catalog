@@ -9,12 +9,17 @@
   display: flex;
   flex-direction: column;
 
+  transition-duration: 300ms;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
   &__imac-image {
-    width: 166px;
+    display: block;
+    margin: 0 auto 40px;
+    width: 160px;
     height: 134px;
-    top: 33px;
-    left: 20px;
-    padding-bottom: 28px;
   }
 
   &__product-details {
@@ -72,58 +77,69 @@
   }
 
   .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $primary-color;
-    border-radius: 5px;
-    border: 1px solid $primary-color;
-    box-sizing: border-box;
     height: 40px;
-    width: 166px;
-    font-weight: 700;
-    font-size: 14px;
+    border-radius: 5px;
+
+    background-color: $primary-color;
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 40px;
     text-align: center;
-    color: #fff;
 
     &:hover {
-      cursor: pointer;
-      background-color: transparent;
+      transition: 300ms;
+      border: 1px solid $primary-color;
+      background-color: #fff;
       color: $primary-color;
     }
   }
-}
 
-.stars {
-  display: flex;
+  .stars {
+    display: flex;
 
-  &__star {
-    height: 16px;
-    width: 16px;
-    margin-right: 4px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url(../../src/images/star.svg);
-  }
+    &__star {
+      height: 16px;
+      width: 16px;
+      margin-right: 4px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../../src/images/star.svg);
+    }
 
-  &--4 {
-    .stars__star:nth-child(-n + 4) {
-      background-image: url(../images/star-active.svg);
+    &--4 {
+      .stars__star:nth-child(-n + 4) {
+        background-image: url(../images/star-active.svg);
+      }
     }
   }
 }
 
 .container {
   display: grid;
-  grid-template-columns: 280px 280px 280px 280px;
-  grid-template-rows: 280px 280px 280px 280px;
+  grid-template-columns: repeat(1, 200px);
+  padding: 50px 40px;
+  gap: 46px 48px;
+  justify-content: center;
+}
 
-  row-gap: 150px;
+@media (min-width: 488px) {
+  .container {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
 
-  &--block {
-    justify-content: space-around;
-    margin-top: 100px;
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 200px);
   }
 }

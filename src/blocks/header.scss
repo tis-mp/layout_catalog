@@ -1,5 +1,3 @@
-$nav-color: var(--nav-color);
-
 body {
   font-family: Roboto, Arial, sans-serif;
   font-size: 12px;
@@ -7,9 +5,10 @@ body {
   font-weight: 500;
   margin: 0;
   padding: 0;
-  width: 1050px;
-  height: 1050px;
-  align-items: center;
+
+  // width: 1050px;
+  // height: 1050px;
+  // align-items: center;
 }
 
 .header {
@@ -52,25 +51,17 @@ body {
     align-items: center;
     color: #000;
     display: flex;
+  }
 
-    &.is-active {
-      color: $nav-color;
-
-      &::after {
-        position: absolute;
-        content: '';
-        height: 4px;
-        border-radius: 2px;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: $nav-color;
-      }
-    }
-
-    &:hover {
-      color: $nav-color;
-    }
+  &__link.is-active::after {
+    position: absolute;
+    content: '';
+    height: 4px;
+    border-radius: 2px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $nav-color;
   }
 
   [data-qa='hover']:hover {
