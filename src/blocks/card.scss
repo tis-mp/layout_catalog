@@ -28,6 +28,11 @@
     text-align: left;
     margin-bottom: 4px;
     width: 166px;
+
+    &:hover {
+      transition: 300ms;
+      color: $hover-color;
+    }
   }
 
   &__product-code {
