@@ -46,6 +46,10 @@ body {
     align-items: center;
     color: #000;
     display: flex;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   &__link.is-active::after {
@@ -62,4 +66,8 @@ body {
   [data-qa='hover']:hover {
     color: $nav-color;
   }
+}
+
+.is-active {
+  color: $primary-color;
 }
