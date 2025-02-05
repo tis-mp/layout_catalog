@@ -60,11 +60,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: $nav-color;
-  }
-
-  [data-qa='hover']:hover {
-    color: $nav-color;
+    background-color: $primary-color;
   }
 }
 
